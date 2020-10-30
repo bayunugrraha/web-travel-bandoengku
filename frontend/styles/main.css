@@ -278,6 +278,84 @@ header .btn-get-started:hover {
   color: #B1B1B1;
 }
 
+.card-details h3 {
+  font-weight: 300;
+  font-size: 14px;
+  color: #44513c;
+}
+
+.card-details .trip-informations th {
+  font-weight: 300;
+  font-size: 18px;
+  color: #44513C;
+}
+
+.card-details .trip-informations td {
+  font-weight: 300;
+  font-size: 18px;
+  color: #B1B1B1;
+}
+
+.card-details .trip-informations .text-blue {
+  color: #071C4D;
+  font-weight: bold;
+}
+
+.card-details .trip-informations .text-orange {
+  color: #FF7700;
+  font-weight: bold;
+}
+
+.card-details .payment-instructions {
+  font-weight: 300;
+  font-size: 14px;
+  color: #B1B1B1;
+}
+
+.card-details .bank .bank-item h3 {
+  font-size: 18px;
+  color: #44513C;
+  margin-bottom: 0;
+}
+
+.card-details .bank .bank-item p {
+  margin-bottom: 0;
+}
+
+.card-details .bank .bank-item .description {
+  margin-left: 10px;
+  overflow: hidden;
+  float: left;
+}
+
+.card-details .bank .bank-item .description p {
+  font-weight: normal;
+  font-size: 16px;
+  color: #44513c;
+}
+
+.card-details .bank .bank-image {
+  width: 45px;
+  height: 45px;
+  float: left;
+}
+
+.card-details .disclaimer {
+  font-weight: 300;
+  font-size: 14px;
+  color: #B1B1B1;
+}
+
+.card-details .btn-add-now {
+  background-color: #44513C;
+  color: #fff;
+}
+
+.card-details .btn-add-now:hover {
+  background-color: #6E8460;
+  color: #fff;
+}
+
 .card-right {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -310,40 +388,67 @@ header .btn-get-started:hover {
   float: left;
 }
 
-.features .gallery .xzoom-container {
+.gallery .xzoom-container {
   display: block;
 }
 
-.features .gallery .xzoom-container .xzoom {
+.gallery .xzoom-container .xzoom {
   width: 100%;
   -webkit-box-shadow: none;
           box-shadow: none;
   margin-bottom: 10px;
 }
 
-.features .gallery .xzoom-container .xactive {
+.gallery .xzoom-container .xactive {
   border: 4px solid #333D2D;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.features .member .member-image {
+.member .member-image {
   width: 40px;
   height: 40;
 }
 
-.features .join-container {
+.join-container {
   margin-top: -16px;
 }
 
-.features .btn-join-now {
+.btn-join-now {
   background-color: #FF7700;
   color: #fff;
   border-radius: 0;
 }
 
-.features .btn-join-now:hover {
+.btn-join-now:hover {
   background-color: #FF9E53;
+  color: #fff;
+}
+
+.section-success {
+  height: 90vh;
+}
+
+.section-success h1 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #44513C;
+}
+
+.section-success p {
+  font-weight: 300;
+  font-size: 18px;
+  color: #B1B1B1;
+}
+
+.section-success .btn-home-page {
+  border-radius: 4px;
+  background-color: #44513C;
+  color: #fff;
+}
+
+.section-success .btn-home-page:hover {
+  background-color: #6E8460;
   color: #fff;
 }
 /*# sourceMappingURL=main.css.map */

@@ -308,6 +308,93 @@ header {
           font-size: 18px;
           color: #B1B1B1;
       }
+
+      h3 {
+        font-weight: 300;
+        font-size: 14px;
+        color: #44513c;
+        
+      }
+
+      .trip-informations {
+          th {
+              font-weight: 300;
+              font-size: 18px;
+              color: #44513C;
+          }
+
+          td {
+              font-weight: 300;
+              font-size: 18px;
+              color: #B1B1B1;
+          } 
+          
+          .text-blue {
+              color: #071C4D;
+              font-weight: bold;
+          }
+
+          .text-orange {
+              color: #FF7700;
+              font-weight: bold;
+          }
+          
+      }
+
+     .payment-instructions {
+         font-weight: 300;
+         font-size: 14px;
+         color: #B1B1B1;
+     }
+
+     .bank {
+         .bank-item {
+             h3{
+                 font-size: 18px;
+                 color: #44513C ;
+                 margin-bottom: 0;
+             }
+
+             p{
+                 margin-bottom: 0;
+             }
+
+             .description{
+                 margin-left: 10px;
+                 overflow: hidden;
+                 float: left;
+
+                 p{
+                    font-weight: normal;
+                    font-size: 16px;
+                    color: #44513c;
+ 
+                 }
+             }
+         }
+
+         .bank-image {
+             width: 45px;
+             height: 45px;
+             float: left;
+         }
+     }
+
+      .disclaimer {
+          font-weight: 300;
+          font-size: 14px;
+          color: #B1B1B1;
+      }
+
+      .btn-add-now {
+          background-color: #44513C;
+          color: #fff;
+
+          &:hover {
+              background-color: #6E8460;
+              color: #fff;
+          }
+      }
   }
 
   .card-right {
@@ -340,6 +427,7 @@ header {
           height: 45px;
           float: left;
       }
+    }
 
       .gallery {
           .xzoom-container {
@@ -380,6 +468,32 @@ header {
             color: #fff; 
           }
         
-      }
-  }
+      } 
 
+      .section-success {
+          height: 90vh;
+
+          h1{
+              font-weight: 600;
+              font-size: 26px;
+              color: #44513C;
+          }
+
+          p{
+              font-weight: 300;
+              font-size: 18px;
+              color: #B1B1B1;
+          }
+
+          .btn-home-page{
+              border-radius: 4px;
+              background-color: #44513C;
+              color: #fff;
+
+
+              &:hover{
+                  background-color: #6E8460;
+                  color: #fff;
+              }
+          }
+      }
