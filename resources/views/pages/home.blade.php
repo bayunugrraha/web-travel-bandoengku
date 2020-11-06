@@ -180,7 +180,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-4">
                     <div class="card card-testimonial text-center">
                         <div class="testimonial-content">
-                            <img src="{{ url('frontend/images/asep.jpg') }" alt="user" class="mb-4 rounded-circle">
+                            <img src="{{ url('frontend/images/asep.jpg') }}" alt="user" class="mb-4 rounded-circle">
                             <h3 class="mb-4">Asep</h3>
                             <p class="testimonial">
                                 "Terima kasih BdgKu adalah guide 
