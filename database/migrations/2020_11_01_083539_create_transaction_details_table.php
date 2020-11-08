@@ -17,8 +17,6 @@ class CreateTransactionDetailsTable extends Migration
             $table->id();
             $table->integer('transactions_id');
             $table->string('username');
-            $table->string('gender');
-            $table->integer('numberphone');
             $table->softDeletes();
             $table->timestamps();
         });

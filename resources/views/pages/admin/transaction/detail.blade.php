@@ -50,15 +50,11 @@
                         <tr>
                             <th>ID</th>
                             <th>Nama</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Nomer Telepon</th>
                         </tr>
                         @foreach ($item->details as $detail)
                             <tr>
                                 <td>{{$detail->id }}</td>
                                 <td>{{$detail->username }}</td>
-                                <td>{{$detail->gender }}</td>
-                                <td>{{$detail->numberphone }}</td>
                             </tr>
                         @endforeach
                     </table>
