@@ -20,7 +20,7 @@ class TravelPackage extends Model
     ];
 
     public function galleries(){
-        return $this->hasMany(Gallery::class, 'tarvel_packages_id', 'id');
+        return $this->hasMany(Gallery::class, 'travel_packages_id', 'id');
     }
     
 }
