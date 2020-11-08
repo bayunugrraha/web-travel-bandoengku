@@ -23,71 +23,56 @@
                   <div class="row">
                       <div class="col-lg-8 pl-lg-0">
                           <div class="card card-details">
-                              <h1>Orchid Forest</h1>
+                              <h1>{{ $item->title}}</h1>
                               <p>
-                                  Lembang, Bandung
+                                  {{ $item->location}}
                               </p>
+                              @if($item->galleries->count())
                               <div class="gallery">
                                 <div class="xzoom-container">
-                                    <img src="frontend/images/details.jpg" class="xzoom" id="xzoom-default" 
-                                    xoriginal="frontend/images/details.jpg">
+                                    <img src="{{ Storage::url($item->galleries->first()->image) }}" class="xzoom" id="xzoom-default" 
+                                    xoriginal="{{ Storage::url($item->galleries->first()->image) }}">
                                 </div>
                                 <div class="xzoom-thumb">
-                                <a href="frontend/images/details1.jpg">
-                                    <img src="frontend/images/details1.jpg" class="xzoom-gallery"
-                                    width="128" xpreview="frontend/images/details1.jpg">
-                                </a>
-                                <a href="frontend/images/details2.jpg">
-                                    <img src="frontend/images/details2.jpg" class="xzoom-gallery"
-                                    width="128" xpreview="frontend/images/details2.jpg">
-                                </a>
-                                <a href="frontend/images/details3.jpg">
-                                    <img src="frontend/images/details3.jpg" class="xzoom-gallery"
-                                    width="128" xpreview="frontend/images/details3.jpg">
-                                </a>
-                                <a href="frontend/images/details4.jpg">
-                                    <img src="frontend/images/details4.jpg" class="xzoom-gallery"
-                                    width="128" xpreview="frontend/images/details4.jpg">
-                                </a>
-                                <a href="frontend/images/details5.jpg">
-                                    <img src="frontend/images/details5.jpg" class="xzoom-gallery"
-                                    width="128" xpreview="frontend/images/details5.jpg">
-                                </a>
+                                @foreach ($item->galleries as $gallery)
+                                    <a href="{{ Storage::url($gallery->image) }}">
+                                        <img src="{{ Storage::url($gallery->image) }}" class="xzoom-gallery"
+                                        width="128" xpreview="{{ Storage::url($gallery->image) }}">
+                                    </a>
+                                @endforeach
                                 </div>
                               </div>
+                              @endif
                               <h2>
                                   Tentang Wisata
                               </h2>
                               <p>
-                                Orchid Forest Cikole Lembang baru dibuka sekitar Agustus tahun 2017. Tempat ini merupakan taman anggrek terluas di Indonesia. Berada di tengah kawasan hutan lindung dan terbentang seluas 12 hektar. Tidak kurang ada 157 jenis bunga anggrek beraneka macam dikembangkan disini.
-                                Orchid Forest Cikole Bandung memfokuskan diri untuk memperkenalkan dan membudidayakan berbagai tanaman anggrek. Menggunakan metode lokal maupun internasional. 
-                              </p>
-                              <p>Tidak hanya berasal dari Indonesia yang merupakan negara kedua terbanyak varian anggrek. Tanaman anggrek di Orchid Forest juga berasal dari negara lain, seperti Venezuela, Argentina, Filipina, Peru, dan Amerika serikat.
+                               {{!! $item->about !!}}
                               </p>
                               <div class="features row">
                                   <div class="col-md-4">
-                                      <img src="frontend/images/ic_event.png" alt="" class="features-image"/>
+                                      <img src="{{ url ('frontend/images/ic_event.png') }}" alt="" class="features-image"/>
                                           <div class="description">
                                               <h3>Featured Event</h3>
-                                              <p>LaLaLa Fest</p>
+                                              <p>{{ $item->featured_event }}</p>
                                           </div>
                                       </h3>
                                   </div>
                                   <div class="col-md-4 border-left">
                                     <div class="description">
-                                      <img src="frontend/images/ic_bahasa.png" alt="" class="features-image"/>
+                                      <img src="{{ url ('frontend/images/ic_bahasa.png') }}" alt="" class="features-image"/>
                                         <div class="description">
                                             <h3>Language</h3>
-                                            <p>Bahasa Indonesia</p>
+                                            <p>{{ $item->language }}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 border-left">
                                     <div class="description">
-                                    <img src="frontend/images/ic_foods.png" alt="" class="features-image"/>
+                                    <img src="{{ url ('frontend/images/ic_foods.png') }}" alt="" class="features-image"/>
                                         <div class="description">
                                             <h3>Foods</h3>
-                                            <p>Local Foods</p>
+                                            <p>{{ $item->foods }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -110,33 +95,43 @@
                                   <tr>
                                       <th width="50%">Keberangkatan</th>
                                       <td width="50%" class="text-right">
-                                         25 Okt, 2020 
+                                         {{ \Carbon\Carbon::create($item->date_of_departure)->format('F n, Y') }}
                                       </td>
                                   </tr>
                                   <tr>
                                     <th width="50%">Durasi</th>
                                     <td width="50%" class="text-right">
-                                       4H 3M 
+                                       {{ $item->duration }} 
                                     </td>
                                 </tr>
                                 <tr>
                                     <th width="50%">Tipe Trip</th>
                                     <td width="50%" class="text-right">
-                                       Open Trip
+                                       {{ $item->type}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <th width="50%">Harga</th>
                                     <td width="50%" class="text-right">
-                                       Rp 300.000/orang
+                                       {{ $item->price }}/orang
                                     </td>
                                 </tr>
                               </table>
                           </div>
                           <div class="join-container">
-                              <a href="{{ route('checkout') }}" class="btn btn-block btn-join-now mt-3 py-2">
-                                  Bergabung Sekarang
-                              </a>
+                                @auth
+                                    <form action="" method="post">
+                                     <button class="btn btn-block btn-join-now mt-3 py-2 type="submit">
+                                     Bergabung Sekarang
+                                     </button>
+                                    </form>
+                                @endauth
+
+                                @guest
+                                    <a href="{{ route('login') }}" class="btn btn-block btn-join-now mt-3 py-2">
+                                    Login or Register to Join
+                                    </a>
+                                @endguest
                           </div>
                       </div>
                   </div>
